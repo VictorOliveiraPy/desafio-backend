@@ -9,8 +9,8 @@ class AccountCardUseCase:
     def __init__(self, db: Session):
         self.repository = PersonRepository(db)
 
-    def create_card(self, user: CardCreate) -> CardCreate:
-        created_card = CreditCard(**user.dict())
+    def create_card(self, card: CardCreate) -> CardCreate:
+        created_card = CreditCard(**card.dict())
         created_card_model = self.repository.create(created_card)
         return created_card_model
 

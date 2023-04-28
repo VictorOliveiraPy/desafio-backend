@@ -13,7 +13,7 @@ class BaseSchema(BaseModel):
 
 
 class CardCreate(BaseSchema):
-    card_id: str
+    id: str
     title: str
     pan: str
     expiry_mm: str
