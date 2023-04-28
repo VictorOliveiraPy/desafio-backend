@@ -1,0 +1,4 @@
+
+# Database - Postgres
+
+DATABASE_URL=postgresql://postgres:postgres@172.28.0.2:5432/postgres
