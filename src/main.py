@@ -13,10 +13,18 @@ app = FastAPI()
 async def pong():
     return {"ping": "pong!"}
 
-
 engine = create_engine(settings.DATABASE_URL)
 Session = sessionmaker(bind=engine)
 Base.metadata.create_all(bind=engine)
 
-app.include_router(account_person_routes.account_person, prefix="/account/person", tags=["account"])
-app.include_router(account_card_routes.card_router, prefix="/account/card", tags=["accounts"])
+app.include_router(
+    account_person_routes.account_person,
+    prefix="/account/person",
+    tags=["account"]
+)
+
+app.include_router(
+    account_card_routes.card_router,
+    prefix="/account/card",
+    tags=["accounts"]
+)

@@ -12,14 +12,12 @@ RUN apt-get update \
 
 # install python dependencies
 RUN pip install --upgrade pip
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+COPY ./details.txt .
+RUN pip install -r details.txt
 RUN pip install uvicorn
 
-# add app
+EXPOSE 8000
+
 COPY . /app
 
-COPY ./entrypoint.sh .
-
-
-CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "80", "--reload"]
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

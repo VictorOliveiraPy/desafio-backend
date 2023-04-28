@@ -5,7 +5,6 @@ from pydantic import AnyUrl, BaseSettings
 
 logging.basicConfig(level=logging.INFO)
 from dotenv import load_dotenv
-from sqlalchemy.engine import URL
 
 load_dotenv()
 
